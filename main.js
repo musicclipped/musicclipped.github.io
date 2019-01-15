@@ -119024,7 +119024,7 @@ var AppConstants = {
     api: 'https://84595ad9.ngrok.io/api',
     // api: 'http://localhost:8080/api',
     jwtKey: 'jwtToken',
-    appName: 'Audio Catalog'
+    appName: 'MusicClipy Audio Catalog'
 };
 
 exports.default = AppConstants;
