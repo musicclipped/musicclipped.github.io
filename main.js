@@ -119767,17 +119767,17 @@ var HomeCtrl = function () {
             _this.colorTiles = function () {
                 var tiles = [];
                 for (var i = 0; i < reviews.length; i++) {
-                    BasicReviews.getTinyUrl("https://1127dc55.ngrok.io/uploads/" + reviews[i].clipName).then(function (zeLink) {
+                    tiles.push({
+                        color: randomColor(),
+                        colspan: randomSpan(),
+                        rowspan: randomSpan(),
+                        nameClip: reviews[i].clipName,
+                        theUrl: BasicReviews.getTinyUrl("https://1127dc55.ngrok.io/uploads/" + reviews[i].clipName).then(function (zeLink) {
 
-                        console.log(zeLink);
+                            console.log(zeLink);
 
-                        tiles.push({
-                            color: randomColor(),
-                            colspan: randomSpan(),
-                            rowspan: randomSpan(),
-                            nameClip: reviews[i].clipName,
-                            theUrl: zeLink
-                        });
+                            return zeLink;
+                        })
                     });
                 }
                 return tiles;
