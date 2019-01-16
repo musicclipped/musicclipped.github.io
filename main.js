@@ -119772,7 +119772,7 @@ var HomeCtrl = function () {
                         colspan: randomSpan(),
                         rowspan: randomSpan(),
                         nameClip: reviews[i].clipName,
-                        theUrl: tinyUrl("https://1127dc55.ngrok.io/uploads/" + reviews[i].clipName)
+                        theUrl: smallUrl("https://1127dc55.ngrok.io/uploads/" + reviews[i].clipName)
                     });
                 }
                 return tiles;
@@ -119793,10 +119793,10 @@ var HomeCtrl = function () {
                 }
             }
 
-            function tinyUrl(clipName) {
+            function smallUrl(clipName) {
                 var _this2 = this;
 
-                this._Reviews.getTinyUrl(clipName).then(function (tinyURL) {
+                BasicReviews.getTinyUrl(clipName).then(function (tinyURL) {
                     _this2.tinyUrl = tinyURL;
 
                     return _this2.tinyUrl;
@@ -119823,7 +119823,7 @@ var HomeCtrl = function () {
                             colspan: randomSpan(),
                             rowspan: randomSpan(),
                             nameClip: searchResults[i].clipName,
-                            theUrl: tinyUrl("https://1127dc55.ngrok.io/uploads/" + reviews[i].clipName)
+                            theUrl: smallUrl("https://1127dc55.ngrok.io/uploads/" + reviews[i].clipName)
                         });
                     }
                     return tiles;
@@ -119844,10 +119844,10 @@ var HomeCtrl = function () {
                     }
                 }
 
-                function tinyUrl(clipName) {
+                function smallUrl(clipName) {
                     var _this4 = this;
 
-                    this._Reviews.getTinyUrl(clipName).then(function (tinyURL) {
+                    BasicReviews.getTinyUrl(clipName).then(function (tinyURL) {
                         _this4.tinyUrl = tinyURL;
 
                         return _this4.tinyUrl;
