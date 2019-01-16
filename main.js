@@ -119770,9 +119770,9 @@ var HomeCtrl = function () {
                     var getUrl = function getUrl(cName) {
                         BasicReviews.getTinyUrl(cName).then(function (tinyURL) {
 
-                            console.log(tinyURL.tinyURL);
+                            console.log(tinyURL);
 
-                            return tinyURL.tinyURL;
+                            return tinyURL;
                         });
                     };
 
