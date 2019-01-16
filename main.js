@@ -119767,21 +119767,17 @@ var HomeCtrl = function () {
             _this.colorTiles = function () {
                 var tiles = [];
                 for (var i = 0; i < reviews.length; i++) {
-                    var getUrl = function getUrl(cName) {
-                        BasicReviews.getTinyUrl(cName).then(function (tinyURL) {
-
-                            console.log(tinyURL);
-
-                            return tinyURL;
-                        });
-                    };
-
                     tiles.push({
                         color: randomColor(),
                         colspan: randomSpan(),
                         rowspan: randomSpan(),
                         nameClip: reviews[i].clipName,
-                        theUrl: getUrl("https://1127dc55.ngrok.io/uploads/" + reviews[i].clipName)
+                        theUrl: BasicReviews.getTinyUrl("https://1127dc55.ngrok.io/uploads/" + reviews[i].clipName).then(function (tinyURL) {
+
+                            console.log(tinyURL);
+
+                            return tinyURL;
+                        })
                     });
                 }
                 return tiles;
