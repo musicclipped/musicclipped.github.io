@@ -119704,11 +119704,11 @@ exports.default = BasicReviewsCtrl;
 },{}],53:[function(require,module,exports){
 'use strict';
 
-HomeConfig.$inject = ["$stateProvider"];
+HomeConfig.$inject = ["$stateProvider", "$compileProvider"];
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-function HomeConfig($stateProvider) {
+function HomeConfig($stateProvider, $compileProvider) {
     'ngInject';
 
     $stateProvider.state('app.home', {
@@ -119718,6 +119718,8 @@ function HomeConfig($stateProvider) {
         templateUrl: 'main/home/home.html',
         title: ''
     });
+
+    $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|sms|whatsapp|tel|chrome-extension):/);
 };
 
 exports.default = HomeConfig;
