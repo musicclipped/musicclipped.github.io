@@ -119768,23 +119768,25 @@ var HomeCtrl = function () {
                 for (var i = 0; i < reviews.length; i++) {
                     var link = "https://1127dc55.ngrok.io/uploads/" + reviews[i].clipName;
 
+                    var name = reviews[i].clipName;
+
                     BasicReviews.getTinyUrl(link).then(function (zeLink) {
 
                         // console.log(zeLink);
 
                         tiles.push({
+                            color: randomColor(),
+                            colspan: randomSpan(),
+                            rowspan: randomSpan(),
+                            nameClip: name,
                             theUrl: zeLink
                         });
 
                         console.log(tiles.theUrl);
                     });
 
-                    tiles.push({
-                        color: randomColor(),
-                        colspan: randomSpan(),
-                        rowspan: randomSpan(),
-                        nameClip: reviews[i].clipName
-                    });
+                    /*tiles.push({
+                     });*/
                 }
                 return tiles;
             }();
