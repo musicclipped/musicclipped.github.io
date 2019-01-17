@@ -119770,23 +119770,21 @@ var HomeCtrl = function () {
 
                     var name = reviews[i].clipName;
 
+                    tiles = [{
+                        nameClip: name
+                    }];
+
                     BasicReviews.getTinyUrl(link).then(function (zeLink) {
 
                         // console.log(zeLink);
-
                         tiles.push({
                             color: randomColor(),
                             colspan: randomSpan(),
                             rowspan: randomSpan(),
-                            nameClip: name,
+                            // nameClip: name,
                             theUrl: zeLink
                         });
-
-                        console.log(tiles.theUrl);
                     });
-
-                    /*tiles.push({
-                     });*/
                 }
                 return tiles;
             }();
