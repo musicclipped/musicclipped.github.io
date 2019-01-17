@@ -119775,6 +119775,8 @@ var HomeCtrl = function () {
                         });
 
                         console.log(xx);
+
+                        return xx;
                     };
 
                     tiles.push({
