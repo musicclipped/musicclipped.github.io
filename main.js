@@ -119767,12 +119767,14 @@ var HomeCtrl = function () {
 
                 for (var i = 0; i < reviews.length; i++) {
                     var zeFunc = function zeFunc(link) {
-                        BasicReviews.getTinyUrl(link).then(function (zeLink) {
+                        var xx = BasicReviews.getTinyUrl(link).then(function (zeLink) {
 
-                            console.log(zeLink);
+                            // console.log(zeLink);
 
                             return zeLink;
                         });
+
+                        console.log(xx);
                     };
 
                     tiles.push({
