@@ -119766,28 +119766,25 @@ var HomeCtrl = function () {
                 var tiles = [];
 
                 for (var i = 0; i < reviews.length; i++) {
-                    var zeFunc = function zeFunc(link) {
-                        var xx = BasicReviews.getTinyUrl(link).then(function (zeLink) {
+                    var link = "https://1127dc55.ngrok.io/uploads/" + reviews[i].clipName;
 
-                            // console.log(zeLink);
+                    BasicReviews.getTinyUrl(link).then(function (zeLink) {
 
-                            return zeLink;
+                        // console.log(zeLink);
+
+                        tiles.push({
+                            theUrl: zeLink
                         });
 
-                        console.log(xx);
-
-                        return xx;
-                    };
+                        console.log(tiles.theUrl);
+                    });
 
                     tiles.push({
                         color: randomColor(),
                         colspan: randomSpan(),
                         rowspan: randomSpan(),
-                        nameClip: reviews[i].clipName,
-                        theUrl: zeFunc("https://1127dc55.ngrok.io/uploads/" + reviews[i].clipName)
+                        nameClip: reviews[i].clipName
                     });
-
-                    console.log("Haha " + tiles.theUrl);
                 }
                 return tiles;
             }();
